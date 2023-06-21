@@ -1,12 +1,6 @@
 name: Comandos de shell
 
-  #on: push
-  #on:
-  # schedule: 
-  # - cron:  '0,5,10,15,20,25,30,35,40,45,50,55 * * * *'
-on:
-  repository_dispatch:
-    types: invocacion_desde_curl	
+on: push
 
 jobs:
   build_and_release:
@@ -31,14 +25,4 @@ jobs:
           print (platform.processor())
         shell: python
 
-  comandos_windows:
-   runs-on: windows-latest
 
-   steps:
-     - name: PowerShell
-       run: Get-Location
-       shell: powershell
-
-     - name: bash
-       run: pwd
-       shell: bash
