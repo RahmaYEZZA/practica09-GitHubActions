@@ -2,12 +2,14 @@ name: Comandos de shell
 
 #on: push
 
-on:
+#on:
 
-  schedule: 
+  #schedule: 
   
-    - cron: '0,5,10,15,20,25,30,35,40,45,50,55 * * * *'
-    
+   # - cron: '0,5,10,15,20,25,30,35,40,45,50,55 * * * *'
+on:
+  repository_dispatch:
+    types: invocacion_desde_curl	
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
